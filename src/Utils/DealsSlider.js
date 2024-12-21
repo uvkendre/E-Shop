@@ -42,6 +42,16 @@ const deals = [
 const DealsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -79,20 +89,22 @@ const DealsSlider = () => {
   };
 
   return (
-    <div className="relative h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-900">
-      {/* Navigation Arrows */}
-      <button
-        className="absolute left-4 top-1/2 z-10 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-colors"
-        onClick={() => paginate(-1)}
-      >
-        <FiChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        className="absolute right-4 top-1/2 z-10 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-colors"
-        onClick={() => paginate(1)}
-      >
-        <FiChevronRight className="w-6 h-6" />
-      </button>
+    <div className="relative h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-900">
+      {/* Navigation Arrows - Hidden on mobile */}
+      <div className="hidden sm:block">
+        <button
+          className="absolute left-2 md:left-4 top-1/2 z-10 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-colors"
+          onClick={() => paginate(-1)}
+        >
+          <FiChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
+        </button>
+        <button
+          className="absolute right-2 md:right-4 top-1/2 z-10 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-colors"
+          onClick={() => paginate(1)}
+        >
+          <FiChevronRight className="w-4 h-4 md:w-6 md:h-6" />
+        </button>
+      </div>
 
       {/* Slides */}
       <AnimatePresence initial={false} custom={direction}>
@@ -122,33 +134,33 @@ const DealsSlider = () => {
         >
           <div className={`w-full h-full bg-gradient-to-r ${deals[currentSlide].bgColor}`}>
             <div className="max-w-7xl mx-auto px-4 h-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 h-full items-center">
                 {/* Text Content */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-white space-y-6"
+                  className="text-white space-y-2 sm:space-y-4 md:space-y-6 text-center md:text-left"
                 >
-                  <span className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                  <span className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 md:px-4 md:py-2 rounded-full text-xs sm:text-sm font-medium">
                     Special Offer
                   </span>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                     {deals[currentSlide].title}
                   </h2>
-                  <h3 className="text-xl md:text-2xl font-semibold text-white/90">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white/90">
                     {deals[currentSlide].subtitle}
                   </h3>
-                  <p className="text-lg text-white/80 max-w-lg">
+                  <p className="text-sm sm:text-base md:text-lg text-white/80 max-w-lg hidden sm:block">
                     {deals[currentSlide].description}
                   </p>
-                  <div className="flex items-center gap-4">
-                    <span className="text-3xl font-bold bg-white/20 backdrop-blur-sm px-6 py-2 rounded-lg">
+                  <div className="flex items-center justify-center md:justify-start gap-3 md:gap-4">
+                    <span className="text-xl sm:text-2xl md:text-3xl font-bold bg-white/20 backdrop-blur-sm px-4 py-1 md:px-6 md:py-2 rounded-lg">
                       {deals[currentSlide].discount}
                     </span>
                     <Link
                       to={deals[currentSlide].link}
-                      className="inline-block bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+                      className="inline-block bg-white text-gray-900 px-4 py-2 md:px-8 md:py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-opacity-90 transition-colors"
                     >
                       Shop Now
                     </Link>
@@ -160,13 +172,13 @@ const DealsSlider = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="relative h-full flex items-center justify-center"
+                  className="relative h-[200px] sm:h-[250px] md:h-[400px] flex items-center justify-center"
                 >
-                  <div className="relative w-full h-[400px]">
+                  <div className="relative w-full h-full">
                     <img
                       src={deals[currentSlide].image}
                       alt={deals[currentSlide].title}
-                      className="absolute inset-0 w-full h-full object-contain"
+                      className="absolute inset-0 w-full h-full object-contain p-4 md:p-8"
                     />
                   </div>
                 </motion.div>
@@ -177,7 +189,7 @@ const DealsSlider = () => {
       </AnimatePresence>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 sm:space-x-2">
         {deals.map((_, index) => (
           <button
             key={index}
@@ -185,9 +197,9 @@ const DealsSlider = () => {
               setDirection(index > currentSlide ? 1 : -1);
               setCurrentSlide(index);
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'w-6 bg-white'
+                ? 'w-4 sm:w-6 bg-white'
                 : 'bg-white/50 hover:bg-white/80'
             }`}
           />

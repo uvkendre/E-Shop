@@ -1,27 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./features/auth/authComponent/Signup";
 import Login from "./features/auth/authComponent/Login";
 import HomePage from "./pages/HomePage";
-import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import ProductDetail from "./pages/ProductDetail";
+import CategoryPage from "./pages/CategoryPage";
+import PhonesPage from "./pages/PhonesPage";
+import Cart from "./features/cart/Cart";
+import Wishlist from "./features/wishlist/Wishlist";
+import Profile from "./features/profile/Profile";
+import Protected from "./features/auth/authComponent/Protected";
+import Checkout from "./features/checkout/Checkout";
+import OrderConfirmation from "./features/checkout/OrderConfirmation";
+import SearchResults from "./features/search/SearchResults";
 import Footer from "./pages/Footer";
 import Verification from "./features/auth/authComponent/Verification";
 import ProductForm from "./features/admin/AdminComponent/ProductForm";
 import Sidebar from "./features/admin/AdminComponent/Sidebar";
 import Default from "./features/admin/AdminComponent/Default";
 import AdminPanelLayout from "./features/admin/AdminComponent/AdminPanelLayout";
-import Cart from "./features/cart/Cart";
-import Checkout from "./features/checkout/Checkout";
-import OrderConfirmation from "./features/checkout/OrderConfirmation";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Profile from "./features/profile/Profile";
-import Wishlist from "./features/wishlist/Wishlist";
-import SearchResults from "./features/search/SearchResults";
-import CategoryPage from "./pages/CategoryPage";
+import { useTheme } from "./context/ThemeContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from './context/ThemeContext';
-import { useTheme } from './context/ThemeContext';
 
 function AppContent() {
   const { darkMode } = useTheme();
@@ -41,7 +44,7 @@ function AppContent() {
           pauseOnHover
           theme={darkMode ? 'dark' : 'colored'}
         />
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<Contact />} />
@@ -67,7 +70,7 @@ function AppContent() {
             </Route>
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </Router>
       </div>
     </div>
   );
