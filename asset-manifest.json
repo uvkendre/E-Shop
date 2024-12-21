@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/E-Shop/static/css/main.72e3c487.css",
-    "main.js": "/E-Shop/static/js/main.c518e137.js",
+    "main.css": "/E-Shop/static/css/main.07e06833.css",
+    "main.js": "/E-Shop/static/js/main.e7620ab4.js",
     "static/js/453.8ab44547.chunk.js": "/E-Shop/static/js/453.8ab44547.chunk.js",
     "static/media/side-image.png": "/E-Shop/static/media/side-image.62322328a01700671e66.png",
     "static/media/gaming setup.jpg": "/E-Shop/static/media/gaming setup.21add9f50bb73aa89931.jpg",
@@ -17,12 +17,12 @@
     "static/media/Gaming.webp": "/E-Shop/static/media/Gaming.1bfa67ea3454c477b01d.webp",
     "static/media/Audio.webp": "/E-Shop/static/media/Audio.b7f335c7aceadc5102ff.webp",
     "index.html": "/E-Shop/index.html",
-    "main.72e3c487.css.map": "/E-Shop/static/css/main.72e3c487.css.map",
-    "main.c518e137.js.map": "/E-Shop/static/js/main.c518e137.js.map",
+    "main.07e06833.css.map": "/E-Shop/static/css/main.07e06833.css.map",
+    "main.e7620ab4.js.map": "/E-Shop/static/js/main.e7620ab4.js.map",
     "453.8ab44547.chunk.js.map": "/E-Shop/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72e3c487.css",
-    "static/js/main.c518e137.js"
+    "static/css/main.07e06833.css",
+    "static/js/main.e7620ab4.js"
   ]
 }
