@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/E-Shop/static/css/main.72e3c487.css",
+    "main.js": "/E-Shop/static/js/main.24f3283b.js",
+    "static/js/453.8ab44547.chunk.js": "/E-Shop/static/js/453.8ab44547.chunk.js",
+    "static/media/side-image.png": "/E-Shop/static/media/side-image.62322328a01700671e66.png",
+    "static/media/gaming setup.jpg": "/E-Shop/static/media/gaming setup.21add9f50bb73aa89931.jpg",
+    "static/media/ps5.png": "/E-Shop/static/media/ps5.8382c8a14b4315776d8e.png",
+    "static/media/gadgetsection.webp": "/E-Shop/static/media/gadgetsection.67c84b6f327db8d991e3.webp",
+    "static/media/woman.png": "/E-Shop/static/media/woman.383eee26ebe7266fbcfe.png",
+    "static/media/speakers.png": "/E-Shop/static/media/speakers.0aae0d8936e05869f362.png",
+    "static/media/perfume.png": "/E-Shop/static/media/perfume.e59125758de0a3da8226.png",
+    "static/media/Computing.webp": "/E-Shop/static/media/Computing.200e3472ba6d474fe43e.webp",
+    "static/media/Wearable.jpg": "/E-Shop/static/media/Wearable.796305878ac97508a83a.jpg",
+    "static/media/HomeAutomation.webp": "/E-Shop/static/media/HomeAutomation.41a53f1c4618c8ee6b1f.webp",
+    "static/media/phone.jpg": "/E-Shop/static/media/phone.06046454e40dde25d0e5.jpg",
+    "static/media/Gaming.webp": "/E-Shop/static/media/Gaming.1bfa67ea3454c477b01d.webp",
+    "static/media/Audio.webp": "/E-Shop/static/media/Audio.b7f335c7aceadc5102ff.webp",
+    "index.html": "/E-Shop/index.html",
+    "main.72e3c487.css.map": "/E-Shop/static/css/main.72e3c487.css.map",
+    "main.24f3283b.js.map": "/E-Shop/static/js/main.24f3283b.js.map",
+    "453.8ab44547.chunk.js.map": "/E-Shop/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72e3c487.css",
+    "static/js/main.24f3283b.js"
+  ]
+}
