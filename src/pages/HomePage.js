@@ -39,7 +39,7 @@ const HomePage = () => {
       </div>
 
       {/* Featured Products */}
-      <div className="mb-12">
+      <div>
         <FeatureComponent />
       </div>
     </div>
